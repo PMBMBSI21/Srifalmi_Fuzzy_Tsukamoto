@@ -10,7 +10,7 @@ import java.text.DecimalFormat;
 import variabel.Karyawan;
 import variabel.Permintaan;
 import variabel.Persediaan;
-import variabel.Produksi;
+//import variabel.Produksi;
 /**
  *
  * @author user

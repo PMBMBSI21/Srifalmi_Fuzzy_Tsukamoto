@@ -15,8 +15,8 @@ import variabel.Karyawan;
  * @author user
  */
 public class RuleBase {
-    private static double [] x_produksi = new double [6];
-    private static double [] y_produksi = new double [6];
+    private static double [] x_produksi = new double [9];
+    private static double [] y_produksi = new double [9];
     private static double jumlah;
     
     //rule base
@@ -38,6 +38,13 @@ public class RuleBase {
     
     x_produksi[5]=Math.min(Permintaan.naik(),Persediaan.banyak());
     x_produksi[5]=Math.min(x_produksi[5],Karyawan.banyak());
+    
+    x_produksi[6]=Math.min(Permintaan.naik(),Persediaan.sedikit());
+    x_produksi[6]=Math.min(x_produksi[6],Karyawan.sedikit());
+    
+    x_produksi[7]=Math.min(Permintaan.naik(),Persediaan.sedikit());
+    x_produksi[7]=Math.min(x_produksi[7],Karyawan.banyak());
+   
    
     }
             
@@ -54,13 +61,19 @@ public class RuleBase {
     
     y_produksi[5]=Produksi.Bertambah( x_produksi [5]);
     
+    y_produksi[6]=Produksi.Berkurang( x_produksi [6]);
+    
+    y_produksi[7]=Produksi.Berkurang( x_produksi [7]);
+    
+    
                  
     }
     
     //menghitung hasil produksi
     public static double hasilproduksi() {
         double atas =0, bawah=0;
-        for(int i=0;i<6;i++){
+        
+        for(int i=0;i<9;i++){
         System.out.println("y_produksike-"+i+ " : " + y_produksi[i] );
         System.out.println("x_produksike-"+i+ " : " + x_produksi[i] );
         

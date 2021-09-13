@@ -22,7 +22,7 @@ public class Karyawan {
         return karyawan;
     }
         //memeberikan nilai pada inputan
-    public static void setkaryawan (double minta) {
+    public static void setkaryawan (double karyawan) {
         Karyawan.karyawan = karyawan;
         
     }
